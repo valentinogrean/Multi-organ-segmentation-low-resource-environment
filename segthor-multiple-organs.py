@@ -58,6 +58,12 @@ cb_model_loss = ModelCheckpoint("/home/vali/src/NeuralNetworks/segthor-loss.hdf5
                                    monitor="loss", verbose=1,
                                    save_best_only=True, mode="min")
 
+# Define callbacks for early stopping
+#from tensorflow.keras.callbacks import ReduceLROnPlateau
+#cb_lr = ReduceLROnPlateau(monitor='loss', factor=0.1, patience=20, verbose=1, mode='min', min_delta=0.0001, cooldown=1, min_lr=0.00001)
+#from tensorflow.keras.callbacks import EarlyStopping
+#cb_es = EarlyStopping(monitor='loss', min_delta=0, patience=150, verbose=1, mode='min')
+
 # normal learning
 #model.reset_weights()
 model.load("/home/vali/src/NeuralNetworks/segthor-loss.hdf5")
